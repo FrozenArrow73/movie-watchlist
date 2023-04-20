@@ -3,6 +3,7 @@ import Header from "./components/Header"
 import {useState, useEffect} from "react"
 import axios from 'axios';
 import MovieScreen from './components/MovieScreen';
+import Watchlist from './components/Watchlist';
 
 function App() {
   const [movieList, setMovieList] = useState([])
@@ -22,12 +23,17 @@ function App() {
     getData()
   }, [page])
 
+  const addMovie = (movie) => {
+    setList([...list, movie])
+  }
+
 
   return (
     <div className="App">
       <Header />
       <main>
-        <MovieScreen list={list} page={page} setPage={setPage} movieList={movieList}/>
+        <MovieScreen list={list} page={page} setPage={setPage} movieList={movieList} addMovie={addMovie}/>
+        <Watchlist list={list}/>
       </main>
     </div>
   );
