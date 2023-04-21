@@ -18,10 +18,10 @@ const MovieScreen = ({list, movieList, page, setPage, addMovie, removeMovie}) =>
     the assignment asked me to put the logic for not decrementening below zero in the jsx return like so 
     onClick={page !== 1 && decrement}
 
-    this doesn't actually work and causes the website to crash when previous is clicked when page === 0
+    this doesn't actually work and causes the website to crash when previous button is clicked when page === 1
     this is because the logic returns false but onClick is looking for a function and can't run false as a function
-    the solution is to put the logic inside the decrement function like with an if statement
-    then when previous is clicked when at page 1 nothing happens like desired and the website doesn't crash
+    the solution is to put the logic inside the decrement function with an if statement
+    then when previous button is clicked when page === 1 nothing happens like desired and the website doesn't crash
     */
     const decrement = () => {
         if(page > 1) {
